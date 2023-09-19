@@ -1,7 +1,7 @@
 package test;
 import org.junit.jupiter.api.Test;
 
-import src.E01;
+import src.E01.E01;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -85,4 +85,6 @@ public class E01Test {
 
         assertNotEquals(true,testVal);
     }
+
+
 }
