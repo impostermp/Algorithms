@@ -12,6 +12,8 @@ public class BinaryTree {
         sc.close();
         int num = tree.internalPathLength(root,0);
         System.out.println("total paths:"+num);
+
+        tree.preOrder(root);
     }
     // recursive method
     public Node createBinaryTreeByHeight(int height){
@@ -30,5 +32,35 @@ public class BinaryTree {
         return depth + internalPathLength(node.getLeft(), depth + 1) + internalPathLength(node.getRight(), depth + 1);
     }
 
-    // traverse methods
+    // traverse methods, pre-order, in-order, post-order & level-order
+
+    public void inOrder(Node node){
+        if (node == null){
+            return;
+        }
+        preOrder(node.getLeft());
+
+        System.out.println(node.getVal()+" ");
+        preOrder(node.getRight());
+    }
+
+    public void preOrder(Node node){
+        if (node == null){
+            return;
+        }
+        System.out.println(node.getVal()+" ");
+
+        preOrder(node.getLeft());
+        preOrder(node.getRight());
+    }
+
+    public void postOrder(Node node){
+        if (node == null){
+            return;
+        }
+
+        preOrder(node.getLeft());
+        preOrder(node.getRight());
+        System.out.println(node.getVal()+" ");
+    }
 }
